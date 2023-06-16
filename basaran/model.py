@@ -23,7 +23,7 @@ class StreamModel:
 
     def __init__(self, model, tokenizer):
         super().__init__()
-        self.model = model
+        self.model = model.float() # Just so it works with codet5-large-ntp-py
         self.tokenizer = tokenizer
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
